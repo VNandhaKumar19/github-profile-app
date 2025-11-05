@@ -1,6 +1,6 @@
 // src/app/shared/components/heatmap-graph/heatmap-graph.component.ts
 import { Component, Input, AfterViewInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import * as echarts from 'echarts'; // Import Echarts library
 import { ContributionGraph } from '../../../core/models/user.interface';
 
@@ -18,7 +18,7 @@ function getEchartsData(graph: ContributionGraph): [ string, number ][] {
 @Component({
   selector: 'app-heatmap-graph',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [],
   template: `
     <div #chartContainer class="heatmap-chart-container"></div>
   `,

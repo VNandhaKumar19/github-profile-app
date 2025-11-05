@@ -1,6 +1,6 @@
 // src/app/features/profile/pages/profile-page/profile-page.component.ts
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProfileCardComponent } from '../../../../shared/components/profile-card/profile-card.component';
 import { NavTabsComponent } from '../../../../shared/components/nav-tabs/nav-tabs.component';
@@ -9,7 +9,7 @@ import { GithubService } from '../../../../core/services/github.service';
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [ CommonModule, RouterModule, ProfileCardComponent, NavTabsComponent ],
+  imports: [RouterModule, ProfileCardComponent, NavTabsComponent],
   templateUrl: './profile-page.component.html',
   styleUrls: [ './profile-page.component.scss' ]
 })

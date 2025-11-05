@@ -1,12 +1,12 @@
 // src/app/shared/components/nav-tabs/nav-tabs.component.ts
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-tabs',
   standalone: true,
-  imports: [ CommonModule, RouterModule ],
+  imports: [RouterModule],
   template: `
     <nav class="github-tabs-nav">
       <ul>
