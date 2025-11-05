@@ -1,0 +1,20 @@
+<div class="overview-content-wrapper">
+    <app-pinned-repos-section></app-pinned-repos-section>
+
+    @if (contributionData()) {
+    <section class="contribution-section">
+        <h2 class="contribution-header">
+            {{ contributionData()!.totalContributions }} contributions in the last year
+        </h2>
+        <app-heatmap-graph [graphData]="contributionData()!"></app-heatmap-graph>
+    </section>
+    }
+
+    <section class="activity-section">
+        <h3>Activity Overview</h3>
+        <p>Placeholder for Code Review/Issues/Pull Requests graph.</p>
+
+        <h3>Contribution Activity</h3>
+        <p>Placeholder for the detailed contribution feed.</p>
+    </section>
+</div>

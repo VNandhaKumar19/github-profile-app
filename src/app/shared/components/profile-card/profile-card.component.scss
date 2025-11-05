@@ -1,0 +1,153 @@
+$github-text: #24292f;
+$github-gray-text: #57606a;
+$github-blue: #0969da;
+$github-border: #d0d7de;
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-container {
+    width: 100%;
+    padding-bottom: 24px;
+}
+
+.avatar-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 50%;
+    transition: border-radius 0.3s;
+
+    @media (min-width: 768px) {
+        border-radius: 6px;
+    }
+}
+
+.name-section {
+    margin-bottom: 16px;
+}
+
+.full-name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: $github-text;
+    margin: 0;
+}
+
+.username {
+    font-size: 20px;
+    font-weight: 300;
+    color: $github-gray-text;
+    margin: 0;
+}
+
+.bio {
+    color: $github-text;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.edit-profile-button {
+    background-color: #f6f8fa;
+    border: 1px solid $github-border;
+    color: $github-text;
+    padding: 5px 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+        background-color: #f3f4f6;
+        border-color: #9ea4ac;
+    }
+}
+
+.stats-section {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $github-border;
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stat-link {
+    color: $github-text;
+    text-decoration: none;
+    font-size: 14px;
+
+    .icon {
+        margin-right: 4px;
+    }
+
+    &:hover {
+        color: $github-blue;
+    }
+}
+
+.meta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: $github-gray-text;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+
+    .icon {
+        width: 20px;
+        text-align: center;
+        margin-right: 8px;
+    }
+
+    a {
+        color: $github-gray-text;
+        text-decoration: none;
+
+        &:hover {
+            color: $github-blue;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .avatar-image {
+        width: 25%;
+        min-width: 80px;
+        border-radius: 50%;
+    }
+
+    .profile-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .avatar-container {
+        padding-bottom: 0;
+        margin-right: 16px;
+    }
+
+    .name-section {
+        flex-grow: 1;
+        margin-bottom: 8px;
+    }
+
+    .bio,
+    .edit-profile-button,
+    .stats-section,
+    .meta-section {
+        width: 100%;
+        margin-top: 8px;
+    }
+}

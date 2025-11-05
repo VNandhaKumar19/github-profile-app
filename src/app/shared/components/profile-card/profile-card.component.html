@@ -1,0 +1,57 @@
+<div class="profile-card">
+    <div class="avatar-container">
+        <img [src]="user.avatar_url" [alt]="user.name + ' avatar'" class="avatar-image">
+    </div>
+
+    <div class="name-section">
+        <h1 class="full-name">{{ user.name }}</h1>
+        <h2 class="username">{{ user.login }}</h2>
+    </div>
+
+    @if (user.bio) {
+    <p class="bio">{{ user.bio }}</p>
+    }
+
+    <button class="edit-profile-button">Edit profile</button>
+
+    <div class="stats-section">
+        <a [routerLink]="['/', user.login, 'followers']" class="stat-link">
+            <span class="icon">👥</span>
+            **{{ user.followers | number }}** followers
+        </a>
+        ·
+        <a [routerLink]="['/', user.login, 'following']" class="stat-link">
+            **{{ user.following | number }}** following
+        </a>
+        ·
+        <app-stats-badge [count]="user.public_gists" label="Gists"></app-stats-badge>
+    </div>
+
+    <div class="meta-section">
+        @if (user.location) {
+        <div class="meta-item">
+            <span class="icon">📍</span>
+            <span>{{ user.location }}</span>
+        </div>
+        }
+
+        @if (user.email) {
+        <div class="meta-item">
+            <span class="icon">📧</span>
+            <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+        </div>
+        }
+
+        @if (user.blog) {
+        <div class="meta-item">
+            <span class="icon">🔗</span>
+            <a [href]="user.blog" target="_blank">{{ user.blog }}</a>
+        </div>
+        }
+
+        <div class="meta-item">
+            <span class="icon">🗓️</span>
+            Joined {{ user.created_at | date:'MMM dd, yyyy' }}
+        </div>
+    </div>
+</div>

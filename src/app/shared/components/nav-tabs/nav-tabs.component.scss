@@ -1,0 +1,56 @@
+$github-blue: #0969da;
+$github-border: #d0d7de;
+$github-light-text: #57606a;
+
+.github-tabs-nav {
+    padding: 0 16px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        overflow-x: auto;
+        border-bottom: 1px solid $github-border;
+    }
+
+    li {
+        margin-right: 16px;
+        padding-bottom: 8px;
+
+        @media (max-width: 767px) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.tab-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    color: $github-light-text;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &:hover {
+        color: #24292f;
+    }
+
+    &.active {
+        color: #24292f;
+        font-weight: 600;
+        border-bottom: 2px solid $github-blue;
+        margin-bottom: -1px;
+    }
+}
+
+.count-badge {
+    background-color: rgba(175, 184, 193, 0.2);
+    color: #24292f;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 6px;
+    margin-left: 6px;
+    border-radius: 2em;
+}

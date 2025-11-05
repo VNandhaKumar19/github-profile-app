@@ -1,0 +1,59 @@
+$github-gray-bg: #f6f8fa;
+$github-border: #d0d7de;
+$sidebar-width-desktop: 296px;
+
+.profile-page-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px 32px 16px;
+    background-color: white;
+    min-height: 100vh;
+}
+
+.profile-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    border-bottom: 1px solid $github-border;
+    margin-bottom: 24px;
+}
+
+.profile-main-content {
+    display: grid;
+    gap: 32px;
+
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "sidebar"
+        "content";
+}
+
+.profile-sidebar {
+    grid-area: sidebar;
+}
+
+.profile-content {
+    grid-area: content;
+}
+
+@media (min-width: 768px) {
+    .profile-main-content {
+        grid-template-columns: $sidebar-width-desktop 1fr;
+        grid-template-areas: "sidebar content";
+        margin-top: 16px;
+    }
+
+    .profile-sidebar {
+        align-self: start;
+        position: sticky;
+        top: 60px;
+    }
+}
+
+.loading-message,
+.error-message {
+    padding: 24px;
+    text-align: center;
+    color: #57606a;
+}
