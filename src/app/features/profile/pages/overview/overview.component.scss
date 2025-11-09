@@ -1,0 +1,84 @@
+.contribution-container {
+    margin-top: 2rem;
+    display: flex;
+}
+
+.contributions {
+    border-bottom: 1px solid #ddd;
+    padding: 16px;
+}
+
+.contribution-section {
+    width: 84%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.timeline {
+    padding-left: 32px;
+
+    @media (min-width:1012px) {
+        width: 16%;
+    }
+}
+
+.contribution-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contribution-settings {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.chart-legend {
+    display: flex;
+    padding-left: 16px;
+    padding-right: 16px;
+    justify-content: space-between;
+}
+
+.chart-legend .color-boxes {
+  display: flex;
+  gap: 4px;
+}
+
+.chart-legend .box {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px; /* ✅ rounded squares */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* light border for dark mode */
+}
+
+.timeline-list {
+    @media (min-width: 1012px) {
+        display: block;
+    }
+
+    display: none;
+    position: sticky;
+
+    .filter-list {
+        list-style-type: none;
+
+        .filter-item {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            font-size: 14px;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .filter-item.selected {
+            color: #ffffff;
+            background-color: #1f6feb;
+            text-decoration: none;
+        }
+    }
+}

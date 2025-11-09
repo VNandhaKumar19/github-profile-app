@@ -1,20 +1,87 @@
 <div class="overview-content-wrapper">
-    <app-pinned-repos-section></app-pinned-repos-section>
+    <app-pinned-repos-section [reposUrl]="userProfile()!.repos_url" [name]="userProfile()!.login" />
 
     @if (contributionData()) {
-    <section class="contribution-section">
-        <h2 class="contribution-header">
-            {{ contributionData()!.totalContributions }} contributions in the last year
-        </h2>
-        <app-heatmap-graph [graphData]="contributionData()!"></app-heatmap-graph>
-    </section>
+    <div class="contribution-container">
+        <section class="contribution-section">
+            <div class="contributions">
+                <h2 class="contribution-header section-title">
+                    {{ contributionData()!.totalContributions }} contributions in the last year
+                    <p class="contribution-settings">Contribution settings ▾</p>
+                </h2>
+    
+                <app-heatmap-graph [graphData]="contributionData()!"></app-heatmap-graph>
+    
+                <div class="chart-legend">
+                    <a
+                        href="https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/troubleshooting-missing-contributions">
+                        Learn how we count contributions</a>
+                    <span class="flex gap-2">
+                        <span class="label">Less</span>
+                        <div class="color-boxes">
+                            @for(color of contributionColors; track $index) {
+                            <span class="box" [style.background]="color"></span>
+                            }
+                        </div>
+                        <span class="label">More</span>
+                    </span>
+                </div>
+            </div>
+
+            <app-activity-section></app-activity-section>
+        </section>
+        <aside class="timeline">
+            <div id="year-list-container" class="col-12 col-lg-2 pl-5 hide-sm hide-md hide-lg">
+                <div style="top: 74px;" class="timeline-list">
+                    <ul class="filter-list">
+                        <li>
+                            <a id="year-link-2025" class="js-year-link filter-item px-3 mb-2 py-2 selected">2025</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2024" class="js-year-link filter-item px-3 mb-2 py-2">2024</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2023" class="js-year-link filter-item px-3 mb-2 py-2">2023</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2022" class="js-year-link filter-item px-3 mb-2 py-2">2022</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2021" class="js-year-link filter-item px-3 mb-2 py-2">2021</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2020" class="js-year-link filter-item px-3 mb-2 py-2">2020</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2019" class="js-year-link filter-item px-3 mb-2 py-2">2019</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2018" class="js-year-link filter-item px-3 mb-2 py-2">2018</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2017" class="js-year-link filter-item px-3 mb-2 py-2">2017</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2016" class="js-year-link filter-item px-3 mb-2 py-2">2016</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2015" class="js-year-link filter-item px-3 mb-2 py-2">2015</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2014" class="js-year-link filter-item px-3 mb-2 py-2">2014</a>
+                        </li>
+                        <li>
+                            <a id="year-link-2013" class="js-year-link filter-item px-3 mb-2 py-2">2013</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </aside>
+    </div>
     }
 
-    <section class="activity-section">
-        <h3>Activity Overview</h3>
-        <p>Placeholder for Code Review/Issues/Pull Requests graph.</p>
+    <app-contribution-section></app-contribution-section>
 
-        <h3>Contribution Activity</h3>
-        <p>Placeholder for the detailed contribution feed.</p>
-    </section>
 </div>

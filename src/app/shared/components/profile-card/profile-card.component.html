@@ -15,19 +15,27 @@
     <button class="edit-profile-button">Edit profile</button>
 
     <div class="stats-section">
-        <a [routerLink]="['/', user.login, 'followers']" class="stat-link">
+        <a [href]="user.followers_url" class="stat-link">
             <span class="icon">👥</span>
-            **{{ user.followers | number }}** followers
+            {{ user.followers | number }} followers
         </a>
         ·
         <a [routerLink]="['/', user.login, 'following']" class="stat-link">
-            **{{ user.following | number }}** following
+            {{ user.following | number }} following
         </a>
-        ·
-        <app-stats-badge [count]="user.public_gists" label="Gists"></app-stats-badge>
+
+        <!-- <app-stats-badge [count]="user.public_gists" label="Gists"></app-stats-badge> -->
     </div>
 
     <div class="meta-section">
+
+        @if(user.company) {
+        <div class="meta-item">
+            <span class="icon">📧</span>
+            <span>{{ user.company }}</span>
+        </div>
+        }
+
         @if (user.location) {
         <div class="meta-item">
             <span class="icon">📍</span>
@@ -46,6 +54,13 @@
         <div class="meta-item">
             <span class="icon">🔗</span>
             <a [href]="user.blog" target="_blank">{{ user.blog }}</a>
+        </div>
+        }
+
+        @if(user.twitter_username) {
+        <div class="meta-item">
+            <span class="icon">🔗</span>
+            <a [href]="'https://www.x.com/' + user.twitter_username" target="_blank">@{{ user.twitter_username }}</a>
         </div>
         }
 

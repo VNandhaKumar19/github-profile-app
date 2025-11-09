@@ -19,10 +19,6 @@ $github-border: #d0d7de;
     height: auto;
     border-radius: 50%;
     transition: border-radius 0.3s;
-
-    @media (min-width: 768px) {
-        border-radius: 6px;
-    }
 }
 
 .name-section {
@@ -71,7 +67,6 @@ $github-border: #d0d7de;
 
 .stats-section {
     padding-bottom: 16px;
-    border-bottom: 1px solid $github-border;
     margin-bottom: 16px;
     display: flex;
     flex-wrap: wrap;

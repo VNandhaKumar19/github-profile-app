@@ -1,15 +1,12 @@
-<header class="profile-header">
+<div class="profile-header">
     @if (user()) {
     <app-nav-tabs [username]="username" [repoCount]="user()!.public_repos"></app-nav-tabs>
     }
-</header>
+</div>
 
 <div class="profile-page-container">
-
     @if (isLoading()) {
     <p class="loading-message">Loading profile...</p>
-    } @else if (error()) {
-    <p class="error-message">{{ error() }}</p>
     } @else if (user()) {
     <div class="profile-main-content">
 
@@ -19,11 +16,6 @@
 
         <div class="profile-content">
             <router-outlet></router-outlet>
-
-            <div class="tab-content-placeholder">
-                <h2>Overview Content</h2>
-                <p>Welcome to the overview. Contributions and Pinned Repositories will appear here.</p>
-            </div>
         </div>
 
     </div>

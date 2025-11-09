@@ -1,0 +1,25 @@
+<section class="activity-section">
+    <div class="org-tags">
+        @for(org of activityOverview.organizations; track $index) {
+        <span class="tag">{{ org }}</span>
+        }
+    </div>
+
+    <h3 class="section-title">Activity overview</h3>
+
+    <div class="activity-content">
+        <div class="activity-text">
+            <div class="repo-info">
+                <span class="icon">💻</span>
+                <span>
+                    Contributed to
+                    @for(repo of activityOverview.contributions.repositories; track $index; let i = $index) {
+                    <a href="#" class="repo-link">{{ repo }}</a>{{ i <
+                        activityOverview.contributions.repositories.length - 1 ? ', ' : '' }} } and {{
+                        activityOverview.contributions.othersCount }} other repositories </span>
+            </div>
+        </div>
+
+        <div #activityRadarChart class="activity-chart"></div>
+    </div>
+</section>

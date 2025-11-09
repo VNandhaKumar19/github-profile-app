@@ -1,1 +1,13 @@
-<p>pinned-repos-section works!</p>
+<div class="pinned-repos-header">
+    <h2 class="section-title">Popular repositories</h2>
+    <a class="customize-link">Customize your pins</a>
+</div>
+
+<div class="pinned-repos-grid">
+    @if (repositories().length === 0) {
+    <p class="placeholder">No popular repositories found.</p>
+    }
+    @for (repo of repositories(); track repo.id) {
+    <div app-repo-list-item class="pinned-repo-item" [repo]="repo" [name]="name"></div>
+    }
+</div>

@@ -1,0 +1,51 @@
+$github-border: #d0d7de;
+$github-gray-text: #57606a;
+
+.pinned-repos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .customize-link {
+        font-size: 12px;
+        color: #0969da;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.pinned-repos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.pinned-repo-item {
+    flex: 0 0 calc(50% - 0.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+        flex: 0 0 calc(100% - 0.5rem);
+    }
+}
+
+.placeholder {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: $github-gray-text;
+    padding: 20px;
+    border: 1px dashed $github-border;
+    border-radius: 6px;
+}

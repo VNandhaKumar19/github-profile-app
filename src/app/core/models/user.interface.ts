@@ -47,3 +47,27 @@ export interface ContributionGraph {
     totalContributions: number;
     weeks: ContributionWeek[];
 }
+
+export interface Repository {
+    id: number;
+    name: string;
+    full_name: string;
+    description: string | null;
+    language: string | null;
+    stargazers_count: number;
+    forks_count: number;
+    fork: boolean;
+    html_url: string;
+    owner: {
+        login: string;
+        avatar_url: string;
+    };
+    url: string;
+}
+
+export interface Fork {
+    parent?: {
+        name: string;
+        full_name?: string;
+    }
+}

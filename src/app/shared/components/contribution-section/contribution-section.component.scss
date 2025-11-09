@@ -1,0 +1,160 @@
+/* src/app/features/profile/pages/overview/overview.component.scss (Activity Feed Styles) */
+
+$github-border: #d0d7de;
+$github-light-gray: #f6f7f9f7;
+$github-gray-text: #57606a;
+$github-darker-text: #494b4d;
+$github-text: #24292f;
+$github-purple: #8250df; // Merged PR color
+$github-green: #2da44e; // Open PR color (used for icon background)
+
+.contribution-activity {
+    // This section represents the activity feed
+    padding-bottom: 24px;
+}
+
+.timeline-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: $github-text;
+    margin: 12px 0 8px 0;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 0;
+    margin-left: 16px;
+
+    // Vertical line connecting items
+    &::before {
+        content: '';
+        position: absolute;
+        left: -12px; // Position line relative to item
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: $github-border;
+    }
+
+    &:last-of-type::before {
+        height: 12px; // Make the last line segment shorter
+        bottom: auto;
+    }
+
+    .activity-icon {
+        position: relative;
+        left: -20px;
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: $github-light-gray; // Mock icon background
+        border: 2px solid white;
+        z-index: 1; // Ensure icon overlaps the line
+        box-shadow: 0 0 0 2px white;
+
+        // Mock actual icons (using a pseudo-element for simplicity)
+        &.commits {
+            font-size: 10px;
+            color: $github-gray-text;
+            display: block;
+            text-align: center;
+            line-height: 12px;
+        }
+
+        &.pull-requests {
+            font-size: 10px;
+            color: $github-gray-text;
+            display: block;
+            text-align: center;
+            line-height: 12px;
+        }
+    }
+
+    .activity-summary-line {
+        flex-grow: 1;
+        font-size: 14px;
+        margin: 0;
+        color: $github-text;
+        line-height: 1.5;
+    }
+
+    .alignment-icon {
+        color: $github-border;
+        cursor: pointer;
+        padding-left: 10px;
+
+        &:hover {
+            color: $github-gray-text;
+        }
+    }
+}
+
+// Styles for the detailed PR block
+.pull-requests-item {
+    padding-bottom: 20px;
+
+    .pr-details-container {
+        flex-grow: 1;
+
+        .activity-summary-line {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.repo-activity-list {
+    margin-top: 10px;
+}
+
+.repo-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: $github-gray-text;
+    margin-bottom: 8px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.labels {
+    display: flex;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.label {
+    padding: 2px 6px;
+    border-radius: 2em;
+    font-size: 11px;
+    color: white;
+
+    &.count-merged {
+        background-color: $github-purple;
+    }
+
+    &.count-open {
+        background-color: $github-green;
+    }
+}
+
+.show-more-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 16px;
+    border: 1px solid $github-border;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+    color: $github-gray-text;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e5e5e5;
+    }
+}

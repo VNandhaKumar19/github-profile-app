@@ -1,12 +1,12 @@
 // src/app/shared/components/nav-tabs/nav-tabs.component.ts
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-tabs',
   standalone: true,
-  imports: [RouterModule],
+  imports: [ RouterModule ],
   template: `
     <nav class="github-tabs-nav">
       <ul>
@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
                class="tab-link">
               {{ tab.label }}
               @if (tab.count !== undefined) {
-                <span class="count-badge">{{ tab.count }}</span>
+                <span class="count-badge">{{ tab.count() }}</span>
               }
             </a>
           </li>
@@ -30,7 +30,7 @@ import { RouterModule } from '@angular/router';
 })
 export class NavTabsComponent {
   @Input() username: string = '';
-  @Input() repoCount: number = 0;
+  repoCount = input<number>(0);
 
   tabs = [
     { id: 1, label: 'Overview', route: 'overview', count: undefined, exact: false },

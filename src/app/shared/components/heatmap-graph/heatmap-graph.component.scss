@@ -1,0 +1,16 @@
+.heatmap-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    @media (max-width: 768px) {
+        max-width: 85dvw;
+    }
+}
+
+.heatmap-chart-container {
+    width: 750px;
+    height: 150px;
+    margin: 0;
+    min-width: 100%;
+}
